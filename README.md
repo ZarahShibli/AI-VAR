@@ -24,9 +24,11 @@ The project uses albumentations for data augmentation, such as:
 
 ### 4. Model Setup:
 
-- Pre-trained models such as ResNet50 and EfficientNet are used for feature extraction.
+- Used three pre-trained models: ResNet-50, EfficientNet-B0, and ViT (Vision Transformer).
 
-- Custom layers are added to the pre-trained models for classification tasks.
+- ResNet and EfficientNet used frozen backbones with custom binary heads.
+
+- ViT was fine-tuned end-to-end with a 2-class classifier.
 
 ### 5. Training with Early Stopping:
 
@@ -43,19 +45,16 @@ The project uses albumentations for data augmentation, such as:
 ### 6. GPU 
 This project utilizes the Kaggle Notebook with dual T4 GPUs for accelerated training.
 
+## Methodology 
+The methodology involves three main stages: first, data preprocessing with augmentations such as resizing, flipping, and brightness and contrast adjustments to enhance model robustness. Second, setting up pre-trained models (ResNet-50, EfficientNet-B0, and Vision Transformer) with customized classification heads for binary output (Foul or Clean). Finally, training is conducted with early stopping and learning rate scheduling, followed by detailed evaluation using accuracy metrics and confusion matrices.
+
+![Image](https://github.com/user-attachments/assets/f2a48e73-40d9-409d-9614-707321dd5ba1)
+
 ## 📊 Results
-After training, the following results are generated:
+The results section presents the performance comparison of the three models—ResNet-50, EfficientNet-B0, and Vision Transformer—on the classification task of football tackles (Foul vs. Clean). Evaluation metrics such as accuracy, precision, recall, and F1-score were reported, along with confusion matrices for detailed analysis. The results show that the Vision Transformer outperformed ResNet-50 and EfficientNet-B0 in classifying football tackles, achieving the highest accuracy. These results highlight the effectiveness of transformer-based architectures for complex visual classification tasks.
 
-- Loss and Accuracy: Visualize over epochs for training and validation sets.
-![Image](https://github.com/user-attachments/assets/c5efb393-f82c-4fc5-aaf4-f112dfef8733)
-
-- Confusion Matrix: Visualizes the confusion matrix for model predictions.
-![Image](https://github.com/user-attachments/assets/60a7dbaa-eec1-4f4f-a9bb-71db117420a2)
-
-- Classification Report: Provides precision, recall, and F1-score for each class.
-<img width="839" alt="Image" src="https://github.com/user-attachments/assets/60b9c569-bfd0-4b7d-b809-88821e5e7245" />
+![Image](https://github.com/user-attachments/assets/f018cb99-32f8-4cbe-b9de-1e1e6cee0183)
 
 ## Testing Samples
-![Image](https://github.com/user-attachments/assets/78655a2c-08a2-46ce-afc2-7a21dd0e56ef)
-
-![Image](https://github.com/user-attachments/assets/ef752d8c-a732-401b-80b1-0641c56b904b)
+<img width="528" alt="Image" src="https://github.com/user-attachments/assets/a41d8fe1-bd5d-4cf7-81fa-b42b8324a23c" />
+<img width="573" alt="Image" src="https://github.com/user-attachments/assets/7e335d22-6df5-41a3-9849-87ca918dc219" />
